@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="description" content="Generate simple checkerboard patterns for 3d graphics tests or UV testing.">
+        <title>Checkerboard Generator</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Space+Mono">
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <canvas id="checkerboard-preview"></canvas>
+
+    <datalist id="width-markers">
+        <option value="0"></option>
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+        <option value="4"></option>
+        <option value="5"></option>
+        <option value="6"></option>
+        <option value="7"></option>
+        <option value="8"></option>
+        <option value="9"></option>
+        <option value="10"></option>
+        <option value="11"></option>
+        <option value="12"></option>
+        <option value="13"></option>
+    </datalist>
+
+    <fieldset class="options">
+        <legend> Checkerboard </legend>
+
+        <div class="color-container option-container">
+            <span> Tile Color </span>
+            <input type="color" value="#FFFFFF" id="fg-color-selector" class="color-picker">
+        </div>
+    
+        <div class="color-container option-container">
+            <span> Background Color </span>
+            <input type="color" id="bg-color-selector" class="color-picker">
+        </div>
+
+        <div class="option-container">
+            <label> Lock to Square </label>
+            <input type="checkbox" checked id="square-checkbox">
+        </div>
+
+        <div class="option-container">
+            <label>Width</label>
+            <input type="range" id="image-width-slider" value="9" min="0" max="13" list="width-markers"> <span class="preview"><span id="image-width-preview"></span>px</span>
+            
+        </div>
+
+        <div class="option-container">
+            <label>Height</label>
+            <input type="range" id="image-height-slider" value="9" min="0" max="13" list="width-markers"> <span class="preview"><span id="image-height-preview"></span>px</span>
+        </div>
+        
+        <div class="option-container">
+            <label>Tile Size</label>
+            <input type="range" id="tile-size-slider" value="6" min="0" max="13" list="width-markers"> <span class="preview"> <span id="tile-size-preview"></span>px</span>
+        </div>
+        
+        <div class="option-container">
+            <button onClick="downloadImage();" id="download-button">Download PNG Image</button>
+        </div>
+
+    </fieldset>
+
+    <div id="footer">
+        This Page was created by <a href="https://github.com/RandomLegoBrick">Matthew Anderson</a>, Generated images are created client side and subject to no copyright whatsoever.
+    </div>
+
+    <script src="script.js"></script>
+</html>
