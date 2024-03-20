@@ -1,4 +1,5 @@
 # Checkerboard
 A very simple tool to create checkerboards properly scaled to 2^n for graphics programming and UV editing.
+[https://checkerboard.pages.dev/](https://checkerboard.pages.dev/)
 
-WHY HAS NO ONE ALREADY DONE THIS SMH
+![demo image of a checkerboard](screenshot.png)
