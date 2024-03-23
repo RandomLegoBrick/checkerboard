@@ -50,7 +50,7 @@ function drawPreview(){
         translateX = (canvas.width - width) / 2;
     }
 
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "rgb(25, 30, 30)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = settings.bg;
@@ -58,18 +58,16 @@ function drawPreview(){
 
     ctx.fillStyle = settings.fg;
 
-    var n = 0;
-    for(var x = 0; x <= settings.width; x += settings.tileSize){
-        for(var y = 0; y <= settings.height; y += settings.tileSize){
+    for(var x = 0; x < settings.width; x += settings.tileSize){
+        for(var y = 0; y < settings.height; y += settings.tileSize){
             var mappedX = translateX + map(x, 0, settings.width, 0, width);
             var mappedY = translateY + map(y, 0, settings.height, 0, height);
             var mappedSize = map(settings.tileSize, 0, settings.width, 0, width);
             
 
-            if(n%2 === 0){
+            if((x+y)/settings.tileSize%2 === 0){
                 ctx.fillRect(mappedX, mappedY, mappedSize, mappedSize);
             }
-            n++;
         }
     }   
 }
